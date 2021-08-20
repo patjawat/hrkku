@@ -20,7 +20,10 @@ use yii\helpers\Url;
         <!-- Left navbar links -->
         <ul class="navbar-nav">
           <li class="nav-item">
-          <a href="<?=\yii\helpers\Url::to("/dashboard")?>" class="nav-link"><i class="fas fa-tachometer-alt"></i> Dashbroad</a>
+          <a href="<?=\yii\helpers\Url::to("/hradmin")?>" class="nav-link"><i class="fas fa-tachometer-alt"></i> admin</a>
+          </li>
+          <li class="nav-item">
+          <a href="<?=\yii\helpers\Url::to("/profile")?>" class="nav-link"><i class="fas fa-tachometer-alt"></i> profile</a>
           </li>
 
         </ul>

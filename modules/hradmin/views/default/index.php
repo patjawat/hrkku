@@ -1,3 +1,12 @@
+<?php
+use yii\helpers\Html;
+use miloschuman\highcharts\Highcharts;
+?>
+<style>
+  .small-box {
+    border-radius: 1rem;
+}
+</style>
 <div class="row">
           <div class="col-lg-3 col-6">
             <!-- small box -->
@@ -35,7 +44,7 @@
               <div class="inner">
                 <h3>44</h3>
 
-                <p>User Registrations</p>
+                <p>ผู้ครองตำแหน่ง</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -50,7 +59,7 @@
               <div class="inner">
                 <h3>65</h3>
 
-                <p>Unique Visitors</p>
+                <p>ผู้ยื่นขอ</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
@@ -81,7 +90,26 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
-               ddd
+               <?php
+               echo Highcharts::widget([
+                'options' => [
+                 'chart'=>[
+                   'type'=>'column'
+                ],
+                   'title' => ['text' => 'สถิติผู้ขอตำแหน่งทางวิชาการ'],
+                   'xAxis' => [
+                      'categories' => ['ม.ค.', 'ก.พ.', 'มี.ค.','ม.ย.','พ.ค','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.']
+                   ],
+                   'yAxis' => [
+                      'title' => ['text' => 'Fruit eaten']
+                   ],
+                   'series' => [
+                      ['name' => 'ผ.ศ.', 'data' => [1, 0, 4,5,12,4,5,15,8,40,20]],
+                      ['name' => 'ร.ศ.', 'data' => [5, 7, 3,8,6,23,53,66,45,74,34]]
+                   ]
+                ]
+             ]);
+               ?>
               </div>
               <!-- /.card-body -->
             </div>
@@ -296,7 +324,7 @@
                 <!-- USERS LIST -->
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title">Latest Members</h3>
+                    <h3 class="card-title"> คณะกรรมการผู้ทรงคุณวุฒิ</h3>
 
                     <div class="card-tools">
                       <span class="badge badge-danger">8 New Members</span>
@@ -312,42 +340,42 @@
                   <div class="card-body p-0">
                     <ul class="users-list clearfix">
                       <li>
-                        <img src="dist/img/user1-128x128.jpg" alt="User Image">
+                        <?=Html::img('@web/img/user1-128x128.jpg');?>
                         <a class="users-list-name" href="#">Alexander Pierce</a>
                         <span class="users-list-date">Today</span>
                       </li>
                       <li>
-                        <img src="dist/img/user8-128x128.jpg" alt="User Image">
+                      <?=Html::img('@web/img/user8-128x128.jpg');?>
                         <a class="users-list-name" href="#">Norman</a>
                         <span class="users-list-date">Yesterday</span>
                       </li>
                       <li>
-                        <img src="dist/img/user7-128x128.jpg" alt="User Image">
+                      <?=Html::img('@web/img/user7-128x128.jpg');?>
                         <a class="users-list-name" href="#">Jane</a>
                         <span class="users-list-date">12 Jan</span>
                       </li>
                       <li>
-                        <img src="dist/img/user6-128x128.jpg" alt="User Image">
+                      <?=Html::img('@web/img/user6-128x128.jpg');?>
                         <a class="users-list-name" href="#">John</a>
                         <span class="users-list-date">12 Jan</span>
                       </li>
                       <li>
-                        <img src="dist/img/user2-160x160.jpg" alt="User Image">
+                      <?=Html::img('@web/img/user2-128x128.jpg');?>
                         <a class="users-list-name" href="#">Alexander</a>
                         <span class="users-list-date">13 Jan</span>
                       </li>
                       <li>
-                        <img src="dist/img/user5-128x128.jpg" alt="User Image">
+                      <?=Html::img('@web/img/user5-128x128.jpg');?>
                         <a class="users-list-name" href="#">Sarah</a>
                         <span class="users-list-date">14 Jan</span>
                       </li>
                       <li>
-                        <img src="dist/img/user4-128x128.jpg" alt="User Image">
+                      <?=Html::img('@web/img/user4-128x128.jpg');?>
                         <a class="users-list-name" href="#">Nora</a>
                         <span class="users-list-date">15 Jan</span>
                       </li>
                       <li>
-                        <img src="dist/img/user3-128x128.jpg" alt="User Image">
+                      <?=Html::img('@web/img/user3-128x128.jpg');?>
                         <a class="users-list-name" href="#">Nadia</a>
                         <span class="users-list-date">15 Jan</span>
                       </li>
@@ -523,27 +551,42 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <div class="row">
-                  <div class="col-md-8">
-                    <div class="chart-responsive"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                      <canvas id="pieChart" height="218" width="438" style="display: block; height: 109px; width: 219px;" class="chartjs-render-monitor"></canvas>
-                    </div>
-                    <!-- ./chart-responsive -->
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-md-4">
-                    <ul class="chart-legend clearfix">
-                      <li><i class="far fa-circle text-danger"></i> Chrome</li>
-                      <li><i class="far fa-circle text-success"></i> IE</li>
-                      <li><i class="far fa-circle text-warning"></i> FireFox</li>
-                      <li><i class="far fa-circle text-info"></i> Safari</li>
-                      <li><i class="far fa-circle text-primary"></i> Opera</li>
-                      <li><i class="far fa-circle text-secondary"></i> Navigator</li>
-                    </ul>
-                  </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.row -->
+                <?php
+                echo Highcharts::widget([
+
+                  'options' => [
+              
+                      'title' => ['text' => 'Sample title - pie chart'],
+              
+                      'plotOptions' => [
+              
+                          'pie' => [
+              
+                              'cursor' => 'pointer',
+              
+                          ],
+              
+                      ],
+              
+                      'series' => [
+              
+                          [
+              
+                              'type' => 'pie',
+              
+                              'name' => 'Elements',
+              
+                              'data' =>[["ผ.ศ.",30],["ร.ศ.",70]],
+              
+                          ]
+              
+                      ],
+              
+                  ],
+              
+              ]);
+              
+                ?>
               </div>
               <!-- /.card-body -->
               <div class="card-footer bg-light p-0">

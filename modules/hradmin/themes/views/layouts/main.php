@@ -28,6 +28,10 @@ $assetDir = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/admi
     html,body,.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6,.btn ,.table{
     font-family: 'Kanit', sans-serif;
 }
+.highcharts-title{
+    font-family: 'Kanit', sans-serif;
+
+}
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
 
 font-weight: 400 !important;
