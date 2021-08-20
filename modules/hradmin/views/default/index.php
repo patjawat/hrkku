@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Html;
 use miloschuman\highcharts\Highcharts;
+$this->title = "Dashboard";
 ?>
 <style>
   .small-box {
