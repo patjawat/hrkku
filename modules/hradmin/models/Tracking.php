@@ -6,6 +6,7 @@ use Yii;
 use yii\helpers\Json;
 use yii\helpers\Url;
 use app\models\Uploads;
+use yii\helpers\html;
 use yii\behaviors\BlameableBehavior;
 /**
  * This is the model class for table "tracking".
