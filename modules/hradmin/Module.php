@@ -18,7 +18,6 @@ class Module extends \yii\base\Module
     public function init()
     {
         parent::init();
-        parent::init();
         Yii::$app->view->theme = new \yii\base\Theme([
             'pathMap' => ['@app/views' => '@app/modules/hradmin/themes/views'],
         ]);

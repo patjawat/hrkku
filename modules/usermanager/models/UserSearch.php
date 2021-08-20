@@ -15,6 +15,10 @@ class UserSearch extends User
     public $occ_id;
     public $pos_id;
     public $occ_no;
+    public $dep_id;
+    public $pname;
+    public $fullname;
+    public $role;
     public function rules()
     {
         return [
