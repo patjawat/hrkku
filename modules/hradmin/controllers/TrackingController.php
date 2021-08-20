@@ -49,7 +49,7 @@ class TrackingController extends Controller
         $dataProvider->query->andFilterWhere([
             'or',
             ['like', 'fname', $searchModel->q],
-            ['like', 'fname', $searchModel->q],
+            ['like', 'lname', $searchModel->q],
             // ['like', 'his_patient.fname', $searchModel->q],
             // ['like', 'his_patient.lname', $searchModel->q],
         ]);
