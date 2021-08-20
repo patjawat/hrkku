@@ -21,12 +21,14 @@ use yii\helpers\Url;
       <div class="collapse navbar-collapse order-3" id="navbarCollapse">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
+          <?php if(!Yii::$app->user->isGuest):?>
           <li class="nav-item">
           <a href="<?=\yii\helpers\Url::to("/hradmin")?>" class="nav-link"><i class="fas fa-tachometer-alt"></i> admin</a>
           </li>
           <li class="nav-item">
-          <a href="<?=\yii\helpers\Url::to("/profile")?>" class="nav-link"><i class="fas fa-tachometer-alt"></i> profile</a>
+          <a href="<?=\yii\helpers\Url::to("/profile")?>" class="nav-link"><i class="far fa-user"></i> profile</a>
           </li>
+          <?php endif;?>
 
         </ul>
 
@@ -37,7 +39,7 @@ use yii\helpers\Url;
       <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
         <!-- SEARCH FORM -->
         <?php if(Yii::$app->user->isGuest):?>
-        <?=Html::a('<i class="fas fa-fingerprint"></i> เข้าสู่ระบบ',['/site/login'],['class' => 'btn btn-primary'])?>
+        <?=Html::a('<i class="fas fa-fingerprint"></i> เข้าสู่ระบบ',['/user/security/login'],['class' => 'btn btn-primary'])?>
           <?php else:?>
         <?= Html::a('<i class="fas fa-power-off"></i> ออกจากระบบ', ['/site/logout'], [
     'data' => [

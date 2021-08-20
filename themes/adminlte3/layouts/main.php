@@ -29,9 +29,21 @@ $assetDir = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/admi
 html,body,.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6,.btn ,.table{
     font-family: 'Kanit', sans-serif;
 }
+h1{
+        color:#eab7ad;
+    }
+    h4{
+        color:#f39c12;
+    }
 .wrapper{
     background-image: url("/images/bg.jpg");
     background-repeat: repeat-y;
+}
+.box-content {
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 .layout-top-nav .wrapper .main-header .brand-image {
     height: 47px;

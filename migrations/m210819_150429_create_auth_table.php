@@ -12,6 +12,8 @@ class m210819_150429_create_auth_table extends Migration
      */
     public function safeUp()
     {
+
+       
         $this->createTable('{{%auth}}', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer()->notNull(),

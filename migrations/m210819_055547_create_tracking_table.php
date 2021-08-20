@@ -15,6 +15,8 @@ class m210819_055547_create_tracking_table extends Migration
         $this->createTable('{{%tracking}}', [
             'id' => $this->primaryKey(),
             'ref'=>$this->string(255),
+            'created_by'=>$this->integer(),
+            'updated_by'=>$this->integer(255),
             'pname' => $this->string()->notNull()->comment('คำนำหน้า'),
             'fname' => $this->string()->notNull()->comment('ชื่อ'),
             'lname' => $this->string()->notNull()->comment('นามสกุล'),

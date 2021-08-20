@@ -5,6 +5,11 @@ use \kartik\datecontrol\Module;
 //เพิ่ม module ที่นี่ที่เดียว
 $modules = [];
 
+// วิธีแก้ authgoogle Error
+// unset($params['authuser']);
+// unset($params['session_state']);
+// unset($params['prompt']);
+
 $modules['datecontrol'] = [
     'class' => 'kartik\datecontrol\Module',
     'displaySettings' => [
@@ -45,6 +50,7 @@ $modules['user'] = [
             },
         ],
     ],
+    
 ];
 
 $modules['gridview'] = ['class' => '\kartik\grid\Module']; //system
@@ -53,5 +59,6 @@ $modules['usermanager'] = ['class' => 'app\modules\usermanager\Usermanager']; //
 $modules['complaint'] = ['class' => 'app\modules\complaint\Module']; //เรื่องร้องทุกข์
 $modules['followup'] = ['class' => 'app\modules\followup\Module']; //เรื่องร้องทุกข์ติดตาม
 $modules['hradmin'] = ['class' => 'app\modules\hradmin\Module']; //hr
+$modules['profile'] = ['class' => 'app\modules\profile\Module']; //hr
 
 return $modules;

@@ -65,7 +65,7 @@ class Tracking extends \yii\db\ActiveRecord
             [['pname', 'fname', 'lname', 'affiliation', 'position', 'position_type', 'position_way',  'branch', 'branch_code'], 'required'],
             [['position', 'branch_code', 'step1', 'step2', 'step3', 'step4', 'step5', 'step6', 'step7', 'step8', 'success'], 'integer'],
             // [['reader'], 'string'],
-            [['local_meeting_date', 'hr_getsubject_date', 'step6_date', 'step7_date','ref','reader'], 'safe'],
+            [['local_meeting_date', 'hr_getsubject_date', 'step6_date', 'step7_date','ref','reader','created_by','updated_by'], 'safe'],
             [['pname', 'fname', 'lname', 'affiliation', 'position_type', 'position_way', 'branch', 'step1_comment', 'step2_comment', 'step3_comment', 'step4_comment', 'step5_comment', 'step6_comment', 'step7_comment', 'step8_comment'], 'string', 'max' => 255],
         ];
     }

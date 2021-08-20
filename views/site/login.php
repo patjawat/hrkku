@@ -13,6 +13,10 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-login">
     <p>กรุณากรอกข้อมูลเพื่อเข้าสู่ระบบ:</p>
 
+    <?= yii\authclient\widgets\AuthChoice::widget([
+     'baseAuthUrl' => ['site/auth'],
+     'popupMode' => false,
+]) ?>
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
         'layout' => 'horizontal',

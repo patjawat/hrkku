@@ -3,6 +3,11 @@
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 $modules = require __DIR__ . '/add_modules.php';
+use dektrium\user\controllers\SecurityController; 
+use yii\base\Event;
+
+
+
 
 $config = [
     'id' => 'basic',
@@ -94,26 +99,42 @@ $config = [
                 'gii/*'
             ],
         ],
-
         'authClientCollection' => [
-            'class' => 'yii\authclient\Collection',
+            'class'   => \yii\authclient\Collection::className(),
             'clients' => [
                 'google' => [
-                    // 'class' => 'yii\authclient\clients\Google',
-                    'class'        => 'dektrium\user\clients\Google',
-
-                    'clientId' => '846595630942-ednbh6spc88m2srm5id9ha174aojh2u8.apps.googleusercontent.com',
+                    // 'class'        => 'dektrium\user\clients\Google',
+                    // 'class' => 'yii\authclient\clients\GoogleOAuth',
+                    'class' => 'yii\authclient\clients\Google',
+                    'clientId'     => '846595630942-ednbh6spc88m2srm5id9ha174aojh2u8.apps.googleusercontent.com',
                     'clientSecret' => 'LVbd81jCstg1fpD1qZLHmKMH',
+                    
                 ],
-                'facebook' => [
-                    'class' => 'yii\authclient\clients\Facebook',
-                    'clientId' => 'facebook_client_id',
-                    'clientSecret' => 'facebook_client_secret',
-                ],
-                // etc.
+                // here is the list of clients you want to use
+                // you can read more in the "Available clients" section
             ],
-        ]
+        ],
+
+        // 'authClientCollection' => [
+        //     'class' => 'yii\authclient\Collection',
+        //     'clients' => [
+        //         'google' => [
+        //             // 'class' => 'yii\authclient\clients\Google',
+        //             'class'        => 'dektrium\user\clients\Google',
+
+        //             'clientId' => '846595630942-ednbh6spc88m2srm5id9ha174aojh2u8.apps.googleusercontent.com',
+        //             'clientSecret' => 'LVbd81jCstg1fpD1qZLHmKMH',
+        //         ],
+        //         'facebook' => [
+        //             'class' => 'yii\authclient\clients\Facebook',
+        //             'clientId' => 'facebook_client_id',
+        //             'clientSecret' => 'facebook_client_secret',
+        //         ],
+        //         // etc.
+        //     ],
+        // ]
     ],
+    
     'params' => $params,
 ];
 

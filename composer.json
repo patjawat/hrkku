@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "phpnt/yii2-icheck": "^0.0.2",
         "miloschuman/yii2-highcharts-widget": "^9.0",
-        "yiisoft/yii2-authclient": "~2.1.0"
+        "yiisoft/yii2-authclient": "~2.1.7",
+        "dominus77/yii2-sweetalert2-widget": "~1.3"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

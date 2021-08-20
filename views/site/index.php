@@ -17,10 +17,6 @@ $assetDir = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/admi
 </style>
 <h4> มหาวิทยาลัยขอนแก่น - Khon Kaen University</h4>
 
-<?= yii\authclient\widgets\AuthChoice::widget([
-     'baseAuthUrl' => ['site/auth'],
-     'popupMode' => false,
-]) ?>
 <!-- 
 <div class="card-container">
     <span class="pro">PRO</span>
