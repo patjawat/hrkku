@@ -23,6 +23,7 @@ class Reader extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    public $q;
     public static function tableName()
     {
         return 'reader';
@@ -35,7 +36,7 @@ class Reader extends \yii\db\ActiveRecord
     {
         return [
             [['sex', 'fname', 'lname', 'position', 'major', 'affiliation', 'contact'], 'required'],
-            [['sex', 'fname', 'lname', 'position', 'major', 'affiliation', 'contact', 'email', 'phone'], 'string', 'max' => 255],
+            [['sex', 'fname', 'lname', 'position', 'major', 'affiliation', 'contact', 'email', 'phone','q'], 'string', 'max' => 255],
         ];
     }
 

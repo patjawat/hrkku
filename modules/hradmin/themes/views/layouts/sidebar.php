@@ -1,8 +1,11 @@
+<?php
+use yii\helpers\Html;
+?>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-        <img src="<?=$assetDir?>/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <?=Html::img('@web/images/hrlogo.png',['class' => 'brand-image img-circle elevation-3','alt'=>'Avatar','style' =>'opacity: .8'])?>
+        <span class="brand-text font-weight-light">AdminHR</span>
     </a>
 
     <!-- Sidebar -->
@@ -35,15 +38,15 @@
             <?php
             echo \hail812\adminlte\widgets\Menu::widget([
                 'items' => [
-                    [
-                        'label' => 'Starter Pages',
-                        'icon' => 'tachometer-alt',
-                        'badge' => '<span class="right badge badge-info">2</span>',
-                        'items' => [
-                            ['label' => 'Active Page', 'url' => ['site/index'], 'iconStyle' => 'far'],
-                            ['label' => 'Inactive Page', 'iconStyle' => 'far'],
-                        ]
-                    ],
+                    // [
+                    //     'label' => 'Starter Pages',
+                    //     'icon' => 'tachometer-alt',
+                    //     'badge' => '<span class="right badge badge-info">2</span>',
+                    //     'items' => [
+                    //         ['label' => 'Active Page', 'url' => ['site/index'], 'iconStyle' => 'far'],
+                    //         ['label' => 'Inactive Page', 'iconStyle' => 'far'],
+                    //     ]
+                    // ],
                     ['label' => 'คณะกรรมการผู้ทรงคุณวุฒิ', 'url' => ['/hradmin/reader/'], 'icon' => 'user',],
                     // ['label' => 'Simple Link', 'icon' => 'th', 'badge' => '<span class="right badge badge-danger">New</span>'],
                     // ['label' => 'Yii2 PROVIDED', 'header' => true],

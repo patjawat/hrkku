@@ -8,7 +8,9 @@ use yii\helpers\Url;
     <div class="container">
     
       <a href="<?=Url::home()?>" class="navbar-brand">
-        <img src="<?=$assetDir?>/img/AdminLTELogo.png"  alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <?=Html::img('@web/images/hrlogo.png',['class' => 'brand-image img-circle elevation-3','alt'=>'Avatar','style' =>'opacity: .8'])?>
+
+        <!-- <img src="<?=$assetDir?>/img/AdminLTELogo.png"  alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
         <span class="brand-text font-weight-light">Human Resource Division</span>
       </a>
 

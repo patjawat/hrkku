@@ -32,6 +32,12 @@ $assetDir = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/admi
     font-family: 'Kanit', sans-serif;
 
 }
+.box-content {
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
 
 font-weight: 400 !important;

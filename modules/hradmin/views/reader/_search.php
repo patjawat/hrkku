@@ -1,48 +1,31 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 
-/* @var $this yii\web\View */
-/* @var $model app\modules\hradmin\models\ReaderSearch */
-/* @var $form yii\widgets\ActiveForm */
 ?>
-
-<div class="reader-search">
+<style>
+.form-group {
+    margin-bottom: 0rem;
+}
+</style>
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
-        'options' => [
-            'data-pjax' => 1
-        ],
     ]); ?>
-
-    <?= $form->field($model, 'id') ?>
-
-    <?= $form->field($model, 'sex') ?>
-
-    <?= $form->field($model, 'fname') ?>
-
-    <?= $form->field($model, 'lname') ?>
-
-    <?= $form->field($model, 'position') ?>
-
-    <?php // echo $form->field($model, 'major') ?>
-
-    <?php // echo $form->field($model, 'affiliation') ?>
-
-    <?php // echo $form->field($model, 'contact') ?>
-
-    <?php // echo $form->field($model, 'email') ?>
-
-    <?php // echo $form->field($model, 'phone') ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
-    </div>
-
+    <?= $form->field($model, 'q', [
+        'inputTemplate' => 
+        '<div class="input-group">{input}'.Html::submitButton('<i class="fas fa-search"></i>', 
+        ['class' => 'btn btn-default']).'&nbsp;'
+        .Html::a('<i class="fas fa-plus"></i>', ['create'], ['class' => 'btn btn-success']).'&nbsp;'
+        .Html::a('<i class="fas fa-redo"></i>', [''], ['class' => 'btn btn-secondary']).'</div>',
+    ])->textInput(['class' => 'form-control float-righ','placeholder' => 'ค้นหา', 'autofocus' => 'autofocus'])->label(false); ?>
     <?php ActiveForm::end(); ?>
 
-</div>
+<?php
+$js = <<< JS
+$('#usersearch-q').select();
+JS;
+$this->registerJS($js);
+?>

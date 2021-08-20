@@ -46,6 +46,13 @@ class TrackingController extends Controller
     {
         $searchModel = new TrackingSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->query->andFilterWhere([
+            'or',
+            ['like', 'fname', $searchModel->q],
+            ['like', 'fname', $searchModel->q],
+            // ['like', 'his_patient.fname', $searchModel->q],
+            // ['like', 'his_patient.lname', $searchModel->q],
+        ]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,

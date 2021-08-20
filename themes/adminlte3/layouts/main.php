@@ -33,6 +33,9 @@ html,body,.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6,.btn ,.table{
     background-image: url("/images/bg.jpg");
     background-repeat: repeat-y;
 }
+.layout-top-nav .wrapper .main-header .brand-image {
+    height: 47px;
+}
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
 
     font-weight: 400 !important;

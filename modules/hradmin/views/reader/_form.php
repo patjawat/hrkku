@@ -10,7 +10,7 @@ use yii\web\View;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="reader-form container">
+<div class="reader-form container box-content">
 
     <?php $form = ActiveForm::begin(); ?>
     <div class="row">
