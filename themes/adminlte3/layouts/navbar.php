@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 ?>
 <!-- Navbar -->
-<nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+<nav class="main-header navbar navbar-expand-md navbar-light navbar-white shadow">
     <div class="container">
     
       <a href="<?=Url::home()?>" class="navbar-brand">

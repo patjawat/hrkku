@@ -37,7 +37,7 @@ use yii\bootstrap4\Breadcrumbs;
     <!-- Main content -->
     <div class="content container mb-5">
     <div>
-        <?php Html::img('@web/images/logo.png',['style' => 'position: absolute;
+        <?php echo Html::img('@web/images/logo.png',['style' => 'position: absolute;
     top: 265px;
     opacity: 0.1;']);?>
         </div>
