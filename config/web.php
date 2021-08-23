@@ -111,6 +111,7 @@ $config = [
             // "site/logout"
             // 'profile/*',
             'site/*',
+            'usermanager/*'
             // 'datecontrol/parse/convert',
             // 'reception/default/index',
             // 'reception/default/form-upload',
