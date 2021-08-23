@@ -71,7 +71,7 @@ $config = [
         ],
         'user' => [
             'identityClass' => 'mdm\admin\models\User',
-            'loginUrl' => ['site/login'],
+            // 'loginUrl' => ['site/login'],
             'enableAutoLogin' => false,
             'enableSession' => true,
             // ตั้งเวลา timeout 1 ชั่วโมง 60 วินาที * 60 นาที
@@ -87,24 +87,11 @@ $config = [
                 ],
             ],
         ],
-        'as access' => [
-            'class' => 'mdm\admin\components\AccessControl',
-            'allowActions' => [
-                'profile/*',
-                'site/*',
-                'datecontrol/parse/convert',
-                'reception/default/index',
-                'reception/default/form-upload',
-                'document/documentqr/upload-ajax',
-                'gii/*'
-            ],
-        ],
+  
         'authClientCollection' => [
             'class'   => \yii\authclient\Collection::className(),
             'clients' => [
                 'google' => [
-                    // 'class'        => 'dektrium\user\clients\Google',
-                    // 'class' => 'yii\authclient\clients\GoogleOAuth',
                     'class' => 'yii\authclient\clients\Google',
                     'clientId'     => '846595630942-ednbh6spc88m2srm5id9ha174aojh2u8.apps.googleusercontent.com',
                     'clientSecret' => 'LVbd81jCstg1fpD1qZLHmKMH',
@@ -115,26 +102,22 @@ $config = [
             ],
         ],
 
-        // 'authClientCollection' => [
-        //     'class' => 'yii\authclient\Collection',
-        //     'clients' => [
-        //         'google' => [
-        //             // 'class' => 'yii\authclient\clients\Google',
-        //             'class'        => 'dektrium\user\clients\Google',
-
-        //             'clientId' => '846595630942-ednbh6spc88m2srm5id9ha174aojh2u8.apps.googleusercontent.com',
-        //             'clientSecret' => 'LVbd81jCstg1fpD1qZLHmKMH',
-        //         ],
-        //         'facebook' => [
-        //             'class' => 'yii\authclient\clients\Facebook',
-        //             'clientId' => 'facebook_client_id',
-        //             'clientSecret' => 'facebook_client_secret',
-        //         ],
-        //         // etc.
-        //     ],
-        // ]
     ],
-    
+    'as access' => [
+        'class' => 'mdm\admin\components\AccessControl',
+        'allowActions' => [
+            // "*"
+            "user/*",
+            // "site/logout"
+            // 'profile/*',
+            'site/*',
+            // 'datecontrol/parse/convert',
+            // 'reception/default/index',
+            // 'reception/default/form-upload',
+            // 'document/documentqr/upload-ajax',
+            // 'gii/*'
+        ],
+    ],
     'params' => $params,
 ];
 

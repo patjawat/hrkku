@@ -49,6 +49,25 @@ $modules['user'] = [
                 Yii::$app->end();
             },
         ],
+        'security' => [
+            'class' => \dektrium\user\controllers\SecurityController::className(),
+            'on ' . \dektrium\user\controllers\SecurityController::EVENT_AFTER_LOGIN => function ($e) {
+
+                Yii::$app->response->redirect('/site/index')->send();
+
+                // if (Yii::$app->user->can('student free')) {
+                //     Yii::$app->response->redirect(array('/course'))->send();
+                // }
+                // if (Yii::$app->user->can('admin')) {
+                //     Yii::$app->response->redirect('http://site.ru/user/')->send();
+                // }
+            
+
+                //Yii::$app->response->redirect(Yii::$app->request->referrer)->send();
+            //    Yii::$app->response->redirect(array('/user/'.Yii::$app->user->id))->send();
+                //Yii::$app->end();
+            }
+    ],
     ],
     
 ];
