@@ -22,9 +22,11 @@ use yii\helpers\Url;
         <!-- Left navbar links -->
         <ul class="navbar-nav">
           <?php if(!Yii::$app->user->isGuest):?>
+            <?php if (\Yii::$app->user->can('admin')): ?>
           <li class="nav-item">
           <a href="<?=\yii\helpers\Url::to("/hradmin")?>" class="nav-link"><i class="fas fa-tachometer-alt"></i> admin</a>
           </li>
+          <?php endif;?>
           <li class="nav-item">
           <a href="<?=\yii\helpers\Url::to("/profile")?>" class="nav-link"><i class="far fa-user"></i> profile</a>
           </li>
