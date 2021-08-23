@@ -21,12 +21,14 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
+        "https://unpkg.com/aos@next/dist/aos.css"
     ];
     public $js = [
-        "https://static.line-scdn.net/liff/edge/2/sdk.js"
+        "https://static.line-scdn.net/liff/edge/2/sdk.js",
+        "https://unpkg.com/aos@next/dist/aos.js"
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap4\BootstrapAsset',
     ];
 }

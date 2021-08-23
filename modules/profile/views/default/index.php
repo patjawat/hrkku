@@ -2,7 +2,7 @@
 use dominus77\sweetalert2\Alert;
 use yii\helpers\Html;
 if(!Yii::$app->user->isGuest){
-    $this->title = $model ? ($model->fname.' '.$model->lname) : '';
+    $this->title = $model ? ($model->pname.$model->fname.' '.$model->lname) : '';
 }
 ?>
 
@@ -12,11 +12,19 @@ if(!Yii::$app->user->isGuest){
 <?php if($model):?>
 <?php Html::img('@web/img/user4-128x128.jpg',['class' => 'profile-user-img img-fluid img-circle']);?>
 
-<div class="callout callout-info mt-3 shadow">
+<div class="callout callout-info mt-3 shadow" data-aos="zoom-in" data-aos-delay="100">
     <h5><i class="fas fa-info"></i> ขอกำหนดตำแหน่ง: <code><?=$model->positionname->name?> </code>&nbsp; ในสาขาวิชา :
         <code><?=$model->branch;?> </code>(<?=$model->branch_code?>)
     </h5>
-    This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
+
+    30% <span class="pull-right">ผลการดำเนินงาน</span>
+    <div class="progress">
+        <div class="progress-bar bg-primary progress-bar-striped" role="progressbar" aria-valuenow="40"
+            aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+            <span class="sr-only">40% Complete (success)</span>
+        </div>
+    </div>
+
 </div>
 
 
@@ -28,14 +36,15 @@ if(!Yii::$app->user->isGuest){
             <!-- /.timeline-label -->
 
             <!-- timeline item -->
-            <?php if(isset($model->step1)):?>
-            <div>
+            <?php if(!is_null($model->step1)):?>
+            <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <i class="fas fa-check bg-success"></i>
                 <div class="timeline-item shadow">
                     <?=$model->stepStatusViewTimeline($model->step1)?>
 
                     <h3 class="timeline-header">ขั้นที่ 1 กองทรัพยากรบุคคลรับเรื่องจากคณะ/หน่วยงาน :
-                        <span><?=$model->hr_getsubject_date;?></span></h3>
+                        <span><?=$model->hr_getsubject_date;?></span>
+                    </h3>
 
                     <div class="timeline-body">
                         <?=$model->step1_comment;?>
@@ -48,8 +57,8 @@ if(!Yii::$app->user->isGuest){
 
 
             <!-- timeline item -->
-            <?php if(isset($model->step2)):?>
-            <div>
+            <?php if(!is_null($model->step2)):?>
+            <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                 <i class="fas fa-check bg-success"></i>
                 <div class="timeline-item shadow">
                     <?=$model->stepStatusViewTimeline($model->step2)?>
@@ -67,8 +76,8 @@ if(!Yii::$app->user->isGuest){
 
 
             <!-- timeline item -->
-            <?php if(isset($model->step3)):?>
-            <div>
+            <?php if(!is_null($model->step3)):?>
+            <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
                 <i class="fas fa-check bg-success"></i>
                 <div class="timeline-item shadow">
                     <?=$model->stepStatusViewTimeline($model->step3)?>
@@ -86,8 +95,8 @@ if(!Yii::$app->user->isGuest){
 
 
             <!-- timeline item -->
-            <?php if(isset($model->step4)):?>
-            <div>
+            <?php if(!is_null($model->step4)):?>
+            <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
                 <i class="fas fa-check bg-success"></i>
                 <div class="timeline-item shadow">
                     <?=$model->stepStatusViewTimeline($model->step4)?>
@@ -106,8 +115,8 @@ if(!Yii::$app->user->isGuest){
 
 
             <!-- timeline item -->
-            <?php if(isset($model->step5)):?>
-            <div>
+            <?php if(!is_null($model->step5)):?>
+            <div data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">
                 <i class="fas fa-check bg-success"></i>
                 <div class="timeline-item shadow">
                     <?=$model->stepStatusViewTimeline($model->step5)?>
@@ -125,8 +134,8 @@ if(!Yii::$app->user->isGuest){
 
 
             <!-- timeline item -->
-            <?php if(isset($model->step6)):?>
-            <div>
+            <?php if(!is_null($model->step6)):?>
+            <div data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
                 <i class="fas fa-check bg-success"></i>
                 <div class="timeline-item shadow">
                     <?=$model->stepStatusViewTimeline($model->step6)?>
@@ -145,8 +154,8 @@ if(!Yii::$app->user->isGuest){
 
 
             <!-- timeline item -->
-            <?php if(isset($model->step7)):?>
-            <div>
+            <?php if(!is_null($model->step7)):?>
+            <div data-aos="fade-up" data-aos-delay="700" data-aos-duration="1000">
                 <i class="fas fa-check bg-success"></i>
                 <div class="timeline-item shadow">
                     <?=$model->stepStatusViewTimeline($model->step7)?>
@@ -163,8 +172,8 @@ if(!Yii::$app->user->isGuest){
             <!-- END timeline item -->
 
             <!-- timeline item -->
-            <?php if(isset($model->step8)):?>
-            <div>
+            <?php if(!is_null($model->step8)):?>
+            <div data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
                 <i class="fas fa-check bg-success"></i>
                 <div class="timeline-item shadow">
                     <?=$model->stepStatusViewTimeline($model->step8)?>
@@ -180,7 +189,7 @@ if(!Yii::$app->user->isGuest){
             <!-- END timeline item -->
 
 
-           
+
         </div>
 
     </div>
@@ -198,3 +207,38 @@ if(!Yii::$app->user->isGuest){
 
 
     </div>
+
+
+    <div data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000"
+        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"
+        data-aos-anchor-placement="top-center">
+    </div>
+
+    <?php
+$js = <<< JS
+    // AOS.init();
+    AOS.init({
+  // Global settings:
+  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+  startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+  initClassName: 'aos-init', // class applied after initialization
+  animatedClassName: 'aos-animate', // class applied on animation
+  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+  
+
+  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+  offset: 120, // offset (in px) from the original trigger point
+  delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 400, // values from 0 to 3000, with step 50ms
+  easing: 'ease', // default easing for AOS animations
+  once: false, // whether animation should happen only once - while scrolling down
+  mirror: false, // whether elements should animate out while scrolling past them
+  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+});
+JS;
+$this->registerJS($js);
+    ?>

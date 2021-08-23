@@ -10,6 +10,9 @@ use yii\helpers\Html;
 $this->registerCssFile('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback');
 
 $assetDir = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/adminlte/dist');
+use app\assets\AppAsset;
+
+AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -30,7 +33,7 @@ html,body,.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6,.btn ,.table{
     font-family: 'Kanit', sans-serif;
 }
 h1{
-        color:#eab7ad;
+        color:#00bc8c;
     }
     h4{
         color:#f39c12;
@@ -67,7 +70,9 @@ h1{
 
 .content-wrapper {
     font-weight: 400;
-    background: linear-gradient(100deg, rgb(167 58 36 / 94%) 50%,#a73b24 0);
+    background: linear-gradient(
+100deg
+, #3f6790ed 50%,#3f6791 0);
     /* background: linear-gradient(100deg, rgb(182, 40, 111) 50%, #ac2066 0); */
     /* background: linear-gradient(100deg, rgb(167 57 37) 50%,#b54933 0); */
     /* height: 100%;
