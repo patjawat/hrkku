@@ -194,15 +194,6 @@ if(!Yii::$app->user->isGuest){
 
     </div>
 
-
-    <?php else:?>
-    <div class="profile-default-index">
-        <div class="row">
-            <div class="col-3">
-                <?=Html::a('ขอกำหนดตำแหน่งทางวิชาการ',['/profile/default/create-performance'],['class' =>'btn btn-block btn-success'])?>
-            </div>
-        </div>
-
         <?php endif;?>
 
 
