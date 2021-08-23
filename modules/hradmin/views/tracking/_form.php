@@ -96,14 +96,7 @@ $reader = ArrayHelper::map(Reader::find()->all(),'id',function($model){
         </div>
     </div>
 
-    <?=$form->field($model, 'reader')->widget(Select2::classname(), [
-    'data' => $reader,
-    'options' => ['placeholder' => 'เลือกกรรมการ ...'],
-    'pluginOptions' => [
-        'allowClear' => true,
-        'multiple' => true
-    ],
-]);?>
+
     <?=$form->field($model, 'local_meeting_date')->widget(DateControl::classname(), [
  'type'=>DateControl::FORMAT_DATE,
  'displayFormat' => 'dd/MM/yyyy',
@@ -167,6 +160,16 @@ $reader = ArrayHelper::map(Reader::find()->all(),'id',function($model){
         <?= $form->field($model, 'step8')->inline()->radioList($list); ?>
         <?= $form->field($model, 'step8_comment')->textInput(['maxlength' => true]) ?>
     </div>
+
+    <?=$form->field($model, 'reader')->widget(Select2::classname(), [
+    'data' => $reader,
+    'options' => ['placeholder' => 'เลือกกรรมการ ...'],
+    'pluginOptions' => [
+        'allowClear' => true,
+        'multiple' => true
+    ],
+]);?>
+
 
     <?php $form->field($model, 'success')->textInput() ?>
 
