@@ -33,14 +33,14 @@ class DefaultController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
 
-            if(!$profile->fname){
+            // if(!$profile->fname){
            
-                $profile->pname = $model->pname;
-                $profile->fname = $model->fname;
-                $profile->lname = $model->lname;
-                $profile->save(false);
+            //     $profile->pname = $model->pname;
+            //     $profile->fname = $model->fname;
+            //     $profile->lname = $model->lname;
+            //     $profile->save(false);
 
-            }
+            // }
             $model->save();
         
             Yii::$app->session->setFlash(\dominus77\sweetalert2\Alert::TYPE_SUCCESS, 'บันทึกข้อมูลสำเร็จ!');
