@@ -20,6 +20,7 @@ $config = [
     'modules' => $modules,
     'timeZone' => 'Asia/Bangkok',
     'components' => [
+
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '8eAUkWkT5RVNyMo41hf2o9RGSPuUHVqY',
@@ -62,7 +63,7 @@ $config = [
         'view' => [
             'theme' => [
                 'pathMap' => [
-                    '@app/views' => '@app/themes/adminlte3',
+                    '@app/views' => '@app/themes/adminlte3/views',
                 ],
             ],
         ],
